@@ -13,20 +13,19 @@ Apache 2.0 License (http://www.apache.org/licenses/LICENSE-2.0)
 Currently supported:
 
 * Debian Systems (Debian, Ubuntu, ...)
-* Java 1.6 and 1.7
+* Java 1.6, 1.7 and 1.8
 * Vendor OpenJDK and Oracle
 
 Features still to come:
 
 * RedHat, Suse, Gentoo, Archlinux, Mandrake, Solaris
-* Java 1.8
 * install common java libraries
 
 ## Usage
 
 ```puppet
   class { "java":
-    version        => "1.7",
+    version        => "1.8",
     jdk            => true,
     jre            => true,
     sources        => true,
@@ -38,7 +37,7 @@ Features still to come:
 ```
 
 * version
-    - the java version ("1.7", "1.6")
+    - the java version ("1.8", "1.7", "1.6")
 * jdk
     - ensures the developer kit
 * jre
@@ -81,6 +80,12 @@ rake spec
 ```
 
 ## Changelog
+
+#### 1.1.0
+
+Maintenance-Release:
+
+* java 1.8 + tests
 
 #### 1.0.1
 

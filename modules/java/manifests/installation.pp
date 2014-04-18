@@ -1,8 +1,8 @@
 # http://docs.puppetlabs.com/references/latest/type.html
 
 class java::installation (
-    $version         = "1.7",
-    $vendor          = "openjdk",
+    $version         = "1.8",
+    $vendor          = "oracle",
     $install_jdk     = true,
     $install_jre     = true,
     $install_sources = true,
@@ -18,6 +18,7 @@ class java::installation (
         case $java::installation::version {
             "1.6": { $package_name = "oracle-java6-installer" }
             "1.7": { $package_name = "oracle-java7-installer" }
+            "1.8": { $package_name = "oracle-java8-installer" }
         }
         
         exec { "oracle_license_agreement":

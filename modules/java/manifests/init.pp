@@ -1,12 +1,12 @@
 # http://docs.puppetlabs.com/references/latest/type.html
 
 class java (
-    $version        = "1.7",
+    $version        = "1.8",
     $jdk            = true,
     $jre            = true,
     $sources        = true,
     $javadoc        = true,
-    $vendor         = "openjdk",
+    $vendor         = "oracle",
     $export_path    = true,
     $set_as_default = true,
 ) {

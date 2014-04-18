@@ -1,14 +1,15 @@
 # http://docs.puppetlabs.com/references/latest/type.html
 
 class java::requirements (
-    $version  = "1.7",
-    $vendor   = "openjdk",
+    $version  = "1.8",
+    $vendor   = "oracle",
 ) {
     
     case $java::requirements::version {
         "1.6":   { }
         "1.7":   { }
-        default: { fail("only Java Versions 1.6 and 1.7 are supported") }
+        "1.8":   { }
+        default: { fail("only Java Versions 1.6, 1.7 and 1.8 are supported") }
     }
     
     case $java::requirements::vendor {

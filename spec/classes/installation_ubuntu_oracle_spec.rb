@@ -24,6 +24,15 @@ describe "java::installation", :type => :class do
             }
         end
         
+        context "Oracle Java 1.8" do
+            let(:params) { { :vendor => "oracle", :version => "1.8", } }
+            it {
+                should contain_exec("oracle_license_agreement").with( "command" => "echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" )
+                should contain_exec("oracle_license_view").with( "command" => "echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections" )
+                should contain_package("oracle-java8-installer").with( "ensure" => "latest" )
+            }
+        end
+        
     end
 
 end

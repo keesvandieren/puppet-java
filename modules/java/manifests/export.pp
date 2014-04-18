@@ -3,8 +3,8 @@
 class java::export(
     $export_path    = true,
     $set_as_default = true,
-    $vendor         = "openjdk",
-    $version        = "1.7",
+    $vendor         = "oracle",
+    $version        = "1.8",
     $install_jdk    = true,
     $install_jre    = true,
 ) {
@@ -12,6 +12,7 @@ class java::export(
     $java_version = $java::export::version ? {
         "1.6" => "6",
         "1.7" => "7",
+        "1.8" => "8",
     }
     
     class oracle {

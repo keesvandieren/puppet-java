@@ -10,6 +10,11 @@ Vagrant::configure("2") do |config|
         cfg.vm.box_url = 'http://files.vagrantup.com/precise64.box'
     end
     
+    config.vm.define :jpuppet_java_trusty64 do |cfg|
+        cfg.vm.box = 'trusty64'
+        cfg.vm.box_url = 'https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box'
+    end
+    
     config.vm.define :jpuppet_java_sles11_64 do |cfg|
         cfg.vm.box = 'sles11_64'
         cfg.vm.box_url = 'http://puppet-vagrant-boxes.puppetlabs.com/sles-11sp1-x64-vbox4210.box'
@@ -66,7 +71,7 @@ Vagrant::configure("2") do |config|
     end
     
     config.vm.provider :virtualbox do |v, override|
-        v.customize ["modifyvm", :id, "--memory", 256]
+        v.customize ["modifyvm", :id, "--memory", 1024]
         v.customize ["modifyvm", :id, "--cpus", 1]
         v.customize ["modifyvm", :id, "--hwvirtex", "on"]
         v.customize ["modifyvm", :id, "--nestedpaging", "on"]
